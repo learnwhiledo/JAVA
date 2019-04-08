@@ -4,7 +4,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		int i =100;
-		int j = 50;
+		int j = 51;
 		
 		byte b= 126;
 		
@@ -13,9 +13,18 @@ public class Main {
 		
 		System.out.println(i+j);
 		System.out.println(i-j);
-		System.out.println(i*5);
+		System.out.println(i*j);
+		//type casting
+		System.out.println((double)i/(double)j);
+		
 		i+=5;
 		System.out.println(i);
+		//Post increment
+		System.out.println(i++);
+		//Pre Incremenent
+		System.out.println(++i);
+		
+		//Array is a collection of same data type
 		int[] arr = {1,2,3,4};
 		System.out.println(arr[1]);
 		char[] myName = {'S','U','N','E','E','L'};
