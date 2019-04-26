@@ -1,36 +1,20 @@
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		
-		int i =100;
-		int j = 51;
+		Customer suneel = new Customer("Mr", "Suneel" ,"Manyam","Hyderabad","9705984789","sunilhari9@gmai.com",1,genderType.M);
+		Customer sridevi = new Customer("Miss", "Sridevi" ,"Garapati","Hyderabad","8985989808","sunilhari9@gmai.com",1,genderType.F);
+		System.out.println(suneel.getGender());
+		System.out.println(suneel.getMailingName());
+		System.out.println(sridevi.getMailingName());
 		
-		byte b= 126;
-		
-		long l = 100L;
-		long l2 = 9000000000L;		
-		
-		System.out.println(i+j);
-		System.out.println(i-j);
-		System.out.println(i*j);
-		//type casting
-		System.out.println((double)i/(double)j);
-		
-		i+=5;
-		System.out.println(i);
-		//Post increment
-		System.out.println(i++);
-		//Pre Incremenent
-		System.out.println(++i);
-		
-		//Array is a collection of same data type
-		int[] arr = {1,2,3,4};
-		System.out.println(arr[1]);
-		char[] myName = {'S','U','N','E','E','L'};
-		System.out.println(myName);
-		
-		
+		Book book1= new Book(1, "My First book on JAVA", "Suneel Manyam", "123456");
+		Book book2 = new Book(2, "Advanced JAVA", "DSL", "234456");
+		UI ui = new UI();
+		ui.printHeader();
+		ui.printBookDetails(book1);
+		ui.printBookDetails(book2);
 
 	}
 
