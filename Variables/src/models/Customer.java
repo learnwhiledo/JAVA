@@ -48,5 +48,20 @@ public class Customer {
 	public genderType getGender() {
 		return this.Gender;
 	}
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+	public String getEmail() {
+		return Email;
+	}
+	public String getAddress() {
+		return Address;
+	}
+	public boolean getIsValid() {
+		return isValid;
+	}
+	public int getCustNo() {
+		return custNo;
+	}
 
 }
