@@ -24,6 +24,16 @@ public class UI {
 		String convertedToString = String.valueOf(start);
 		return this.formatString(convertedToString, end);
 	}
+
+	public void printBookCatalog(Book[] books) {
+		// TODO Auto-generated method stub
+		for(int counter=0;counter<books.length;counter++) {
+			if(books[counter]!=null) {
+				this.printBookDetails(books[counter]);
+			}	
+		}		
+		
+	}
 	
 
 }
