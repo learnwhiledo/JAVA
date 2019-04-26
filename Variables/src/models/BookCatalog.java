@@ -1,3 +1,5 @@
+package models;
+
 public class BookCatalog {
 	private Book[] books = new Book[100];
 	private int nextPosition =0;

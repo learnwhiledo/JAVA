@@ -1,3 +1,8 @@
+package ui;
+import models.Book;
+import models.BookCatalog;
+import models.Customer;
+import utilities.genderType;
 
 public class Main {
 

@@ -1,3 +1,5 @@
+package models;
+import utilities.genderType;
 
 public class Customer {
 	// Variables
