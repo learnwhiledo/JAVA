@@ -1,4 +1,7 @@
 package models;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import utilities.genderType;
 
 public class Customer {
@@ -12,6 +15,8 @@ public class Customer {
 	private genderType Gender;
 	private boolean isValid;
 	private int custNo;
+	private Date expiryDate;
+	
 
 	// Constructors
 	public Customer(String title, String firstName, String surname,
@@ -23,6 +28,9 @@ public class Customer {
 		this.custNo =custmerNo;
 		this.Gender=gender;
 		this.isValid =true;
+		GregorianCalendar gCal = new GregorianCalendar();
+		gCal.add(GregorianCalendar.YEAR,1);
+		this.expiryDate =gCal.getTime();
 	
 	}
 
@@ -64,4 +72,7 @@ public class Customer {
 		return custNo;
 	}
 
+	public Date getExpiryDate() {
+		return expiryDate;
+	}
 }
