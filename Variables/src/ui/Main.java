@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import models.Book;
 import models.BookCatalog;
 import models.Customer;
+import models.DVD;
 import utilities.genderType;
 
 public class Main {
@@ -21,9 +22,13 @@ public class Main {
 		System.out.println(sridevi.getMailingName()+" Account expiry date is "+ sridevi.getExpiryDate());
 	
 
-		Book book1 = new Book(1, "My First book on JAVA", "Suneel Manyam", "123456");
-		Book book2 = new Book(2, "Advanced JAVA", "DSL", "234456");
+		Book book1 = new Book(1, "My First book on JAVA", "Suneel Manyam", "123456","hyderbad",200);
+		Book book2 = new Book(2, "Advanced JAVA", "DSL", "234456","Sec",600);
 
+		DVD dvd1 = new DVD(3,"Avengenres","Hyd","RH","Action",123);
+		dvd1.relocate("Sec");
+		System.out.println(dvd1.getBranch());
+		System.out.println(dvd1.lend(suneel));
 		BookCatalog books = new BookCatalog();
 		books.addBook(book1);
 		books.addBook(book2);
