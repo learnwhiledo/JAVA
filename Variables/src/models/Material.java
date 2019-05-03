@@ -1,9 +1,10 @@
 package models;
 
-public class Material {
+public abstract class Material {
 	private int id;
 	private String title;
 	private String branch;
+	private Customer borrower;
 	
 	public Material(int id, String title, String branch) {
 		this.id = id;
@@ -26,7 +27,13 @@ public class Material {
 		this.branch = newBranch;
 	}
 	public boolean lend(Customer customer) {
-		return true;
+		if(borrower==null) {
+			this.borrower=customer;
+			return true;
+		}else {
+			return false;
+		}
+		
 	}
 
 	
