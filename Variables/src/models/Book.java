@@ -12,6 +12,7 @@ public class Book extends Material {
 		this.noOfPages = noOfPages;
 
 	}
+
 	public String getAuthor() {
 		return author;
 	}
@@ -19,6 +20,7 @@ public class Book extends Material {
 	public String getISBID() {
 		return ISBID;
 	}
+
 	public int getLoanPeriod() {
 		return 7;
 	}
