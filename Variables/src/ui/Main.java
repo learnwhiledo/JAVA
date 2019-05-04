@@ -25,16 +25,17 @@ public class Main {
 		Book book1 = new Book(1, "My First book on JAVA", "Suneel Manyam", "123456","hyderbad",200);
 		Book book2 = new Book(2, "Advanced JAVA", "DSL", "234456","Sec",600);
 		System.out.println(book1.lend(suneel));
-		System.out.println(book1.lend(sridevi));
+		System.out.println(book1.getLoanPeriod());
 		DVD dvd1 = new DVD(3,"Avengenres","Hyd","RH","Action",123);
 		dvd1.relocate("Sec");
 		//System.out.println(dvd1.getBranch());
 		dvd1.licenced();
 		System.out.println(dvd1.lend(suneel));
-		System.out.println(dvd1.lend(suneel));
+		System.out.println(dvd1.getLoanPeriod());
 		BookCatalog books = new BookCatalog();
 		books.addBook(book1);
 		books.addBook(book2);
+		
 
 		UI ui = new UI();
 		ui.printHeader();

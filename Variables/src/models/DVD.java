@@ -29,5 +29,9 @@ public class DVD extends Material {
 		
 	}
 	
+	public int getLoanPeriod() {
+		return 14;
+	}
+	
 
 }

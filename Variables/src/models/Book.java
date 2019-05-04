@@ -19,4 +19,7 @@ public class Book extends Material {
 	public String getISBID() {
 		return ISBID;
 	}
+	public int getLoanPeriod() {
+		return 7;
+	}
 }

@@ -35,6 +35,8 @@ public abstract class Material {
 		}
 		
 	}
+	//Must be implement in child class
+	public abstract int getLoanPeriod();
 
 	
 
