@@ -7,6 +7,9 @@ import models.BookCatalog;
 import models.BookNotFoundException;
 import models.Customer;
 import models.DVD;
+import models.Loan;
+import models.LoanAlreadyExistsException;
+import models.LoanRegistry;
 import utilities.genderType;
 
 public class Main {
@@ -41,9 +44,9 @@ public class Main {
 		books.addBook(book1);
 		books.addBook(book2);
 
-		System.out.println(suneel.equals(sridevi));
+		//System.out.println(suneel.equals(sridevi));
 
-		System.out.println(suneel.equals(manyam));
+		//System.out.println(suneel.equals(manyam));
 
 		UI ui = new UI();
 		ui.printHeader();
@@ -65,7 +68,26 @@ public class Main {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
+		
+		Loan loan = new Loan(1, suneel, book1);
+		System.out.println(loan);
+		System.out.println(loan.getDueDate());
+		LoanRegistry registry = new LoanRegistry();
+		try {
+			registry.addLoan(loan);
+			System.out.println("Loan added to registry");
+		} catch (LoanAlreadyExistsException e) {
+			System.out.println("Loan already Exists");
+		}
+		
+		try {
+			registry.addLoan(loan);
+			System.out.println("Loan added to registry");
+		} catch (LoanAlreadyExistsException e) {
+			System.out.println("Loan already Exists");
+		}
 
 	}
+	
 
 }
