@@ -25,11 +25,16 @@ public class BookCatalog {
 	}
 
 	public Book findBook(String title) throws BookNotFoundException {
+		title = title.trim();
 		for (int i = 0; i < books.length; i++) {
 
 			if (books[i] != null && books[i].getTitle().equalsIgnoreCase(title))
 				return books[i];
 		}
 		throw new BookNotFoundException();
+	}
+
+	public int getBooksCount() {
+		return nextPosition;
 	}
 }

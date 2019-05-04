@@ -1,6 +1,8 @@
 package models;
 
 public abstract class Material {
+	
+
 	private int id;
 	private String title;
 	private String branch;
@@ -45,6 +47,27 @@ public abstract class Material {
 	@Override
 	public String toString() {
 		return "Material [getTitle()=" + getTitle() + "]";
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Material other = (Material) obj;
+		if (id != other.id)
+			return false;
+		return true;
 	}
 
 }
