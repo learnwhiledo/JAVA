@@ -1,4 +1,6 @@
 package ui;
+import java.util.HashMap;
+
 import models.Book;
 
 public class UI {
@@ -27,13 +29,12 @@ public class UI {
 		return this.formatString(convertedToString, end);
 	}
 
-	public void printBookCatalog(Book[] books) {
+	public void printBookCatalog(HashMap<Integer,Book> books) {
 		// TODO Auto-generated method stub
-		for(int counter=0;counter<books.length;counter++) {
-			if(books[counter]!=null) {
-				this.printBookDetails(books[counter]);
-			}	
-		}		
+		
+		for(Book nextBook : books.values()) {
+				this.printBookDetails(nextBook);
+		}
 		
 	}
 	

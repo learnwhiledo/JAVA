@@ -1,40 +1,45 @@
 package models;
 
-public class BookCatalog {
-	private Book[] books = new Book[100];
-	private int nextPosition = 0;
+import java.util.HashMap;
 
-	public Book[] getBooks() {
-		return books;
+public class BookCatalog {
+	private HashMap< Integer, Book> bookMap;
+	
+	
+	public BookCatalog() {
+		this.bookMap = new HashMap<Integer,Book>();
+	}
+
+	
+	public HashMap< Integer, Book> getBookMap() {
+		return bookMap;
 	}
 
 	public void addBook(Book book) {
 		// TODO Auto-generated method stub
-		books[nextPosition] = book;
-		nextPosition++;
-
+		bookMap.put(book.getId(),book);
 	}
 
-	public Book searchBook(String title) {
-		for (int i = 0; i < books.length; i++) {
-
-			if (books[i] != null && books[i].getTitle().contains(title))
-				return books[i];
+	public Book searchBook(String title) throws BookNotFoundException {
+		for(Book nextBook : bookMap.values()) {
+			if ( nextBook.getTitle().contains(title))
+				return nextBook;
 		}
-		return null;
+		throw new BookNotFoundException();
+		
 	}
-
+	public int getBooksCount() {
+		// TODO Auto-generated method stub
+		return bookMap.size();
+	}
 	public Book findBook(String title) throws BookNotFoundException {
 		title = title.trim();
-		for (int i = 0; i < books.length; i++) {
-
-			if (books[i] != null && books[i].getTitle().equalsIgnoreCase(title))
-				return books[i];
+		for(Book nextBook : bookMap.values()) {
+			if ( nextBook.getTitle().equalsIgnoreCase(title))
+				return nextBook;
 		}
 		throw new BookNotFoundException();
 	}
 
-	public int getBooksCount() {
-		return nextPosition;
-	}
+
 }

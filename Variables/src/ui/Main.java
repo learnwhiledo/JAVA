@@ -50,15 +50,17 @@ public class Main {
 
 		UI ui = new UI();
 		ui.printHeader();
-		ui.printBookCatalog(books.getBooks());
-		Book searchBook = books.searchBook("JAVA");
-		if (searchBook != null) {
-			// System.out.println("Search results....!");
+		ui.printBookCatalog(books.getBookMap());
+		Book searchBook;
+		try {
+			searchBook = books.searchBook("JAVA");
 			ui.printHeader();
 			ui.printBookDetails(searchBook);
-		} else {
+		} catch (BookNotFoundException e1) {
+			// TODO Auto-generated catch block
 			System.out.println("No books found");
 		}
+			
 
 		try {
 			Book foundbook = books.findBook("JAVA");
