@@ -14,7 +14,7 @@ public class CustomerRecords {
 		this.customers.add(customer);
 	}
 
-	public Customer findCustomer(String name) throws CustomerNotFound {
+	public Customer findCustomer(String name) throws CustomerNotFoundException {
 		name = name.trim();
 		for (Customer customer : this.customers) {
 			if (customer.getMailingName().contains(name)) {
@@ -22,7 +22,7 @@ public class CustomerRecords {
 			}
 		}
 
-		throw new CustomerNotFound();
+		throw new CustomerNotFoundException();
 
 	}
 
