@@ -17,7 +17,8 @@ public abstract class Material {
 	public String getTitle() {
 		return title;
 	}
-
+	
+	
 	public String getBranch() {
 		return branch;
 	}
@@ -43,10 +44,9 @@ public abstract class Material {
 	// Must be implement in child class
 	public abstract int getLoanPeriod();
 
-	// this is an overridden method from java.lan.obj class
 	@Override
 	public String toString() {
-		return "Material [getTitle()=" + getTitle() + "]";
+		return "Material " + id + ": " + title ;
 	}
 	@Override
 	public int hashCode() {

@@ -3,13 +3,14 @@ package ui;
 import java.text.SimpleDateFormat;
 
 import models.Book;
-import models.BookCatalog;
-import models.BookNotFoundException;
+import models.MaterialCatalog;
+import models.MaterialNotfoundException;
 import models.Customer;
 import models.DVD;
 import models.Loan;
 import models.LoanAlreadyExistsException;
 import models.LoanRegistry;
+import models.Material;
 import utilities.genderType;
 
 public class Main {
@@ -34,15 +35,18 @@ public class Main {
 		Book book2 = new Book(2, "Advanced JAVA", "DSL", "234456", "Sec", 600);
 		// System.out.println(book1.lend(suneel));
 		// System.out.println(book1.getLoanPeriod());
-		DVD dvd1 = new DVD(3, "Avengenres", "Hyd", "RH", "Action", 123);
+		DVD dvd1 = new DVD(3, "Avengenres", "Hyd", "Speel burg", "Action", 123);
+		DVD dvd2 = new DVD(4, "JOHN", "Hyd", "Gale", "Action", 123);
 		dvd1.relocate("Sec");
 		// System.out.println(dvd1.getBranch());
 		dvd1.licenced();
 		// System.out.println(dvd1.lend(suneel));
 		// System.out.println(dvd1.getLoanPeriod());
-		BookCatalog books = new BookCatalog();
-		books.addBook(book1);
-		books.addBook(book2);
+		MaterialCatalog materials = new MaterialCatalog();
+		materials.addMaterial(book1);
+		materials.addMaterial(book2);
+		materials.addMaterial(dvd1);
+		materials.addMaterial(dvd2);
 
 		//System.out.println(suneel.equals(sridevi));
 
@@ -50,25 +54,25 @@ public class Main {
 
 		UI ui = new UI();
 		ui.printHeader();
-		ui.printBookCatalog(books.getBookMap());
-		Book searchBook;
+		ui.printMaterialCatalog(materials.getMaterialMap());
+		Material foundMaterial;
 		try {
-			searchBook = books.searchBook("JAVA");
+			foundMaterial = materials.findMaterial("My First book on JAVA");
 			ui.printHeader();
-			ui.printBookDetails(searchBook);
-		} catch (BookNotFoundException e1) {
+			System.out.println(foundMaterial.toString());
+		} catch (MaterialNotfoundException e1) {
 			// TODO Auto-generated catch block
-			System.out.println("No books found");
+			System.out.println("No materials found");
 		}
 			
 
 		try {
-			Book foundbook = books.findBook("JAVA");
+			foundMaterial = materials.findMaterial("JOHN");
 			ui.printHeader();
-			ui.printBookDetails(foundbook);
-		} catch (BookNotFoundException e) {
+			System.out.println(foundMaterial.toString());
+		} catch (MaterialNotfoundException e) {
 			// TODO Auto-generated catch block
-			System.out.println(e);
+			System.out.println("Cant find book wiht java");
 		}
 		
 		Loan loan = new Loan(1, suneel, book1);

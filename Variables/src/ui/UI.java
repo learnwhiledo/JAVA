@@ -2,16 +2,17 @@ package ui;
 import java.util.HashMap;
 
 import models.Book;
+import models.Material;
 
 public class UI {
 	public void printHeader() {
 		// TODO Auto-generated method stub
-		System.out.println("BookID"+"  "+"Title               "+"  "+"Author");
+		System.out.println("MaterialID"+"  "+"Title               "+"  "+"Author");
 
 	}
 	
-	public void printBookDetails(Book book) {
-		System.out.println(this.formatString(book.getId(), 6)+"  "+formatString(book.getTitle(), 20)+"  "+formatString(book.getAuthor(), 20));		
+	public void printBookDetails(Material material) {
+		System.out.println(this.formatString(material.getId(), 6)+"  "+formatString(material.getTitle(), 20));		
 	}
 	private String formatString(String start, int end) {
 		if(start.length()>=end) {
@@ -36,6 +37,14 @@ public class UI {
 				this.printBookDetails(nextBook);
 		}
 		
+	}
+
+	public void printMaterialCatalog(HashMap<Integer, Material> materialMap) {
+		// TODO Auto-generated method stub
+
+		for(Material material : materialMap.values()) {
+				System.out.println(material.toString());
+		}
 	}
 	
 
