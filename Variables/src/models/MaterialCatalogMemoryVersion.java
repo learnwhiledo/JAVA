@@ -1,13 +1,13 @@
 package models;
 
-import java.util.HashMap;
+import java.util.TreeMap;
 
-public class MaterialCatalog {
+public class MaterialCatalogMemoryVersion implements MaterialCatalogeInterface{
 
-	private HashMap< Integer, Material> materials;
+	private TreeMap< Integer, Material> materials;
 
-	public MaterialCatalog() {
-		this.materials = new HashMap<Integer,Material>();
+	public MaterialCatalogMemoryVersion() {
+		this.materials = new TreeMap<Integer,Material>();
 	}
 	
 	public void addMaterial(Material material) {		
@@ -24,11 +24,11 @@ public class MaterialCatalog {
 		throw new MaterialNotfoundException();
 	}
 	
-	public int getNoOfMaterials() {
+	public int getNumberOfMaterials() {
 		return materials.size();
 	}
 
-	public HashMap<Integer, Material> getMaterialMap() {
+	public TreeMap<Integer, Material> getMaterialMap() {
 		return materials;
 	}
 

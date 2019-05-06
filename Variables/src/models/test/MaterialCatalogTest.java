@@ -6,25 +6,25 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 import models.Book;
-import models.MaterialCatalog;
+import models.MaterialCatalogMemoryVersion;
 import models.MaterialNotfoundException;
 
 class MaterialCatalogTest {
-	MaterialCatalog materialCatalog;
+	MaterialCatalogMemoryVersion materialCatalog;
 	Book book;
 
 	public MaterialCatalogTest() {
-		materialCatalog = new MaterialCatalog();
+		materialCatalog = new MaterialCatalogMemoryVersion();
 		book = new Book(1, "Learning Java", "", "", "", 0);
 		materialCatalog.addMaterial(book);
 	}
 
 	@Test
 	public void testAddBook() {
-		int initalBookcount = materialCatalog.getNoOfMaterials();
+		int initalBookcount = materialCatalog.getNumberOfMaterials();
 		Book book1 = new Book(2, "", "", "", "", 0);
 		materialCatalog.addMaterial(book1);
-		assertTrue(initalBookcount == materialCatalog.getNoOfMaterials() - 1);
+		assertTrue(initalBookcount == materialCatalog.getNumberOfMaterials() - 1);
 
 	}
 

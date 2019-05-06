@@ -3,7 +3,7 @@ package ui;
 import java.text.SimpleDateFormat;
 
 import models.Book;
-import models.MaterialCatalog;
+import models.MaterialCatalogMemoryVersion;
 import models.MaterialNotfoundException;
 import models.Customer;
 import models.DVD;
@@ -42,7 +42,7 @@ public class Main {
 		dvd1.licenced();
 		// System.out.println(dvd1.lend(suneel));
 		// System.out.println(dvd1.getLoanPeriod());
-		MaterialCatalog materials = new MaterialCatalog();
+		MaterialCatalogMemoryVersion materials = new MaterialCatalogMemoryVersion();
 		materials.addMaterial(book1);
 		materials.addMaterial(book2);
 		materials.addMaterial(dvd1);

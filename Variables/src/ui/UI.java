@@ -1,5 +1,6 @@
 package ui;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 import models.Book;
 import models.Material;
@@ -30,7 +31,7 @@ public class UI {
 		return this.formatString(convertedToString, end);
 	}
 
-	public void printBookCatalog(HashMap<Integer,Book> books) {
+	public void printBookCatalog(TreeMap<Integer,Book> books) {
 		// TODO Auto-generated method stub
 		
 		for(Book nextBook : books.values()) {
@@ -39,7 +40,7 @@ public class UI {
 		
 	}
 
-	public void printMaterialCatalog(HashMap<Integer, Material> materialMap) {
+	public void printMaterialCatalog(TreeMap<Integer, Material> materialMap) {
 		// TODO Auto-generated method stub
 
 		for(Material material : materialMap.values()) {
