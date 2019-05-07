@@ -28,7 +28,17 @@ public class DVD extends Material {
 		}
 
 	}
+	public String getCatalog() {
+		return catalog;
+	}
+	public int getRunnningTime() {
+		return runnningTime;
+	}
+	public boolean getLicence() {
+		// TODO Auto-generated method stub
+		return licence;
 
+	}
 	public int getLoanPeriod() {
 		return 14;
 	}

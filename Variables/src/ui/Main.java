@@ -11,6 +11,7 @@ import models.Loan;
 import models.LoanAlreadyExistsException;
 import models.LoanRegistry;
 import models.Material;
+import models.MaterialCatalogDatabaseVersion;
 import utilities.genderType;
 
 public class Main {
@@ -42,12 +43,14 @@ public class Main {
 		dvd1.licenced();
 		// System.out.println(dvd1.lend(suneel));
 		// System.out.println(dvd1.getLoanPeriod());
-		MaterialCatalogMemoryVersion materials = new MaterialCatalogMemoryVersion();
-		materials.addMaterial(book1);
+		MaterialCatalogDatabaseVersion materials = new MaterialCatalogDatabaseVersion();
+		/*materials.addMaterial(book1);
 		materials.addMaterial(book2);
 		materials.addMaterial(dvd1);
-		materials.addMaterial(dvd2);
+		materials.addMaterial(dvd2);*/
 
+		System.out.println("There are " +materials.getNumberOfMaterials()+" Materials In Libreray");
+				
 		//System.out.println(suneel.equals(sridevi));
 
 		//System.out.println(suneel.equals(manyam));
@@ -57,7 +60,7 @@ public class Main {
 		ui.printMaterialCatalog(materials.getMaterialMap());
 		Material foundMaterial;
 		try {
-			foundMaterial = materials.findMaterial("My First book on JAVA");
+			foundMaterial = materials.findMaterial("JAVA");
 			ui.printHeader();
 			System.out.println(foundMaterial.toString());
 		} catch (MaterialNotfoundException e1) {

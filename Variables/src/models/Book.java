@@ -28,4 +28,9 @@ public class Book extends Material {
 	public String toString() {
 		return "Book :"+getId()+": "+ getTitle()+ "/"+ author;
 	}
+
+	public int getNoofPages() {
+	
+		return noOfPages;
+	}
 }
