@@ -15,6 +15,14 @@ import org.apache.derby.tools.sysinfo;
 
 public class MaterialCatalogDatabaseVersion implements MaterialCatalogeInterface {
 
+	public MaterialCatalogDatabaseVersion() {
+		try {
+			Class.forName("org.apache.derby.jdbc.ClientDriver");
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	@Override
 	public void addMaterial(Material newMaterial) {
 		Connection conn = null;
@@ -22,7 +30,6 @@ public class MaterialCatalogDatabaseVersion implements MaterialCatalogeInterface
 		try {
 
 			try {
-				Class.forName("org.apache.derby.jdbc.ClientDriver");
 				conn = DriverManager.getConnection("jdbc:derby://localhost/library");
 
 				if (newMaterial instanceof Book) {
@@ -59,9 +66,7 @@ public class MaterialCatalogDatabaseVersion implements MaterialCatalogeInterface
 
 		}
 
-		catch (ClassNotFoundException e) {
-			throw new RuntimeException(e);
-		} catch (SQLException e) {
+		catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -74,7 +79,6 @@ public class MaterialCatalogDatabaseVersion implements MaterialCatalogeInterface
 		try {
 
 			try {
-				Class.forName("org.apache.derby.jdbc.ClientDriver");
 				conn = DriverManager.getConnection("jdbc:derby://localhost/library");
 				st = conn.createStatement();
 				rs = st.executeQuery("select * from materials");
@@ -109,11 +113,7 @@ public class MaterialCatalogDatabaseVersion implements MaterialCatalogeInterface
 
 		}
 
-		catch (
-
-		ClassNotFoundException e) {
-			throw new RuntimeException(e);
-		} catch (SQLException e) {
+		catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -126,7 +126,6 @@ public class MaterialCatalogDatabaseVersion implements MaterialCatalogeInterface
 		try {
 
 			try {
-				Class.forName("org.apache.derby.jdbc.ClientDriver");
 				conn = DriverManager.getConnection("jdbc:derby://localhost/library");
 				st = conn.createStatement();
 				rs = st.executeQuery("select * from materials where title like '%" + title + "%'");
@@ -161,11 +160,7 @@ public class MaterialCatalogDatabaseVersion implements MaterialCatalogeInterface
 
 		}
 
-		catch (
-
-		ClassNotFoundException e) {
-			throw new RuntimeException(e);
-		} catch (SQLException e) {
+		catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -178,7 +173,6 @@ public class MaterialCatalogDatabaseVersion implements MaterialCatalogeInterface
 		try {
 
 			try {
-				Class.forName("org.apache.derby.jdbc.ClientDriver");
 				conn = DriverManager.getConnection("jdbc:derby://localhost/library");
 				st = conn.createStatement();
 				rs = st.executeQuery("select count(id) from materials");
@@ -197,11 +191,7 @@ public class MaterialCatalogDatabaseVersion implements MaterialCatalogeInterface
 
 		}
 
-		catch (
-
-		ClassNotFoundException e) {
-			throw new RuntimeException(e);
-		} catch (SQLException e) {
+		 catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
