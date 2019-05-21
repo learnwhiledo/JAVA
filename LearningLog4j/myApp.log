@@ -1,0 +1,6 @@
+2019-05-21 15:35:52,021 ERROR Main [main] Erro Event 
+2019-05-21 15:35:52,023 FATAL AnotherClass [main] FATAL Event 
+2019-05-21 15:35:52,023 INFO AnotherClass [main] Info Event 
+2019-05-21 15:39:44,774 ERROR Main [main] Erro Event 
+2019-05-21 15:39:44,782 FATAL AnotherClass [main] FATAL Event 
+2019-05-21 15:39:44,783 INFO AnotherClass [main] Info Event 
